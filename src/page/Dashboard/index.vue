@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { ArrowRightIcon, ArrowUpIcon, ArrowDownIcon } from 'heroicons-vue3/outline'
-import DefaultChart from '@/components/Card/defaultChart.ts'
+import DefaultChart from '@/components/Chart/defaultChart'
 import SideNavigation from '@/components/SideNavigation/index.vue'
 import DefaultLayout from '@/layouts/DefaultLayout/index.vue'
 import dayjs from 'dayjs'
@@ -55,10 +55,12 @@ const cards =[
                             </div>
                         </div>
 
-                        <div class="grid overflow-hidden grid-cols-2 grid-rows-2 gap-2">
-                            <div class="box col-start-1">1</div>
+                        <div class="grid overflow-hidden grid-cols-3 grid-rows-2 gap-2">
+                            <div class="box row-span-1 col-start-1 col-span-2">
+                                <DefaultChart/>
+                            </div>
                             <div class="box row-span-2">2</div>
-                            <div class="box">3</div>
+                            <div class="box col-span-2">3</div>
                         </div>
                     </template>
                 </DefaultLayout>
