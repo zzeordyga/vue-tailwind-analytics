@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 </script>
 <template lang="">
-    <div>
+    <div class="bg-gray">
         <h1 class="text-2xl font-semibold text-gray-900">
             <slot name="title">
                 Dashboard

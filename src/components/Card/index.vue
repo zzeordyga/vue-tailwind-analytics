@@ -1,6 +1,6 @@
 <template lang="">
     <div class="bg-white overflow-hidden shadow rounded-lg">
-        <slot></slot>            
+        <slot></slot>
     </div>
 </template>
 <script lang="ts" setup>

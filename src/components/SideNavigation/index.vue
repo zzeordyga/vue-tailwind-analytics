@@ -24,7 +24,7 @@
               </div>
             </TransitionChild>
             <div class="flex-1 h-0 pt-5 pb-4 overflow-y-auto">
-              <div class="flex-shrink-0 flex items-center px-4">
+              <div class="flex-shrink-0 flex items-center px-4 text-3xl font-semibold text-neon-blue">
                 Sales Dash
               </div>
               <nav aria-label="Sidebar" class="mt-5">
@@ -75,8 +75,8 @@
       <div class="flex flex-col w-64">
         <div class="flex flex-col h-0 flex-1 border-r border-gray-200 bg-gray-100">
           <div class="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
-            <div class="flex items-center flex-shrink-0 px-4">
-              Sales Dash
+            <div class="flex items-center flex-shrink-0 px-4 text-3xl font-semibold text-neon-blue">
+              SalesDash
             </div>
             <nav class="mt-5 flex-1" aria-label="Sidebar">
               <div class="pl-2 space-y-1">
@@ -117,9 +117,9 @@
     </div>
     <div class="flex flex-col min-w-0 flex-1 overflow-hidden">
       <div class="lg:hidden">
-        <div class="flex items-center justify-between bg-gray-50 border-b border-gray-200 px-4 py-1.5">
+        <div class="flex items-center justify-between bg-gray-50 border-b border-gray-200 px-4 py-1.5 text-3xl font-semibold text-neon-blue">
           <div>
-            Sales Dash
+            SalesDash
           </div>
           <div>
             <button type="button"
@@ -132,7 +132,7 @@
         </div>
       </div>
       <div class="flex-1 relative z-0 flex overflow-hidden">
-        <main class="flex-1 relative z-0 overflow-y-auto focus:outline-none">
+        <main class="flex-1 relative z-0 overflow-y-auto focus:outline-none no-scrollbar">
           <!-- Start main area-->
           <div class="absolute inset-0 py-6 px-4 sm:px-6 lg:px-8">
             <slot></slot>
@@ -141,7 +141,7 @@
         </main>
         <aside class="hidden relative xl:flex xl:flex-col flex-shrink-0 w-96 border-l border-gray-200">
           <!-- Start secondary column (hidden on smaller screens) -->
-          <div class="absolute inset-0 py-6 px-4 sm:px-6 lg:px-8">
+          <div class="absolute inset-0 py-6 px-4 sm:px-6 lg:px-8 bg-gray-100">
             <slot name="secondary"></slot>
           </div>
           <!-- End secondary column -->
@@ -243,3 +243,15 @@ export default {
   },
 }
 </script>
+<style>
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+</style>
