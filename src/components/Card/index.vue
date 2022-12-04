@@ -1,7 +1,7 @@
 <template lang="">
     <div class="bg-white overflow-hidden shadow rounded-lg">
         <slot></slot>            
-    <div>
+    </div>
 </template>
 <script lang="ts" setup>
 </script>

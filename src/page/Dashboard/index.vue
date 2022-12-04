@@ -1,9 +1,47 @@
 <script lang="ts" setup>
+import maxim from "@/assets/maxim.svg";
+import ovo from "@/assets/ovo.svg";
+import pln from "@/assets/pln.svg";
+import telkomsel from "@/assets/telkomsel.svg";
+import three from "@/assets/three.svg";
 import { ArrowRightIcon, ArrowUpIcon, ArrowDownIcon } from 'heroicons-vue3/outline'
+import Card from '@/components/Card/index.vue'
 import DefaultChart from '@/components/Chart/defaultChart'
 import SideNavigation from '@/components/SideNavigation/index.vue'
 import DefaultLayout from '@/layouts/DefaultLayout/index.vue'
 import dayjs from 'dayjs'
+
+const products = [
+    {
+        name: 'Maxim',
+        price: 150000,
+        transactions: 150,
+        src: maxim,
+    },
+    {
+        name: 'OVO',
+        price: 150000,
+        transactions: 150,
+        src: ovo,
+    },
+    {
+        name: 'Three',
+        price: 150000,
+        transactions: 150,
+        src: three,
+    },
+    {
+        name: 'Telkomsel',
+        price: 150000,
+        transactions: 150,
+        src: telkomsel,
+    },
+    {
+        name: 'PLN Postpaid',
+        transactions: 150,
+        src: pln,
+    },
+]
 
 const cards =[
     { name: 'Profit', data: 'Rp. 11.500.000', extra: '0.3% compared to 7 days ago', extraIcon: ArrowUpIcon, color: 'fiery-rose' },
@@ -55,12 +93,30 @@ const cards =[
                             </div>
                         </div>
 
-                        <div class="grid overflow-hidden grid-cols-3 grid-rows-2 gap-2">
-                            <div class="box row-span-1 col-start-1 col-span-2">
+                        <div class="grid overflow-hidden grid-cols-3 grid-rows-2 gap-2 mt-8">
+                            <div class="p-4 box row-span-1 col-start-1 col-span-2">
+                                <h4 class="text-md font-bold">Sales Chart</h4>
                                 <DefaultChart/>
                             </div>
-                            <div class="box row-span-2">2</div>
-                            <div class="box col-span-2">3</div>
+                            <div class="p-4 box row-span-2">2</div>
+                            <div class="p-4 box col-span-2">
+                                <h4 class="text-md font-bold">Top 5 Products</h4>
+                                <Card class="flex p-5 space-x-4">
+                                    <Card class="p-5 shadow-md shadow-neon-blue" v-for="(item, index) in products" :key="index">
+                                        <div class="flex flex-col justify-center text-center">
+                                            <img :src="item.src" alt="my-logo" class="h-32 w-32"/>
+                                            <div class="mt-2 font-bold">
+                                                <h4>{{item.name}}</h4>
+                                                <h5 class="font-semibold text-gray-400" v-if="item.price">{{item.price}}</h5>
+                                                <div class="text-md">
+                                                    {{item.transactions}}
+                                                    <span class="text-sm"> transactions</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </Card>
+                                </Card>
+                            </div>
                         </div>
                     </template>
                 </DefaultLayout>
