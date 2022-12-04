@@ -1,8 +1,18 @@
 /** @type {import('tailwindcss').Config} */
+const colors = require('tailwindcss/colors')
+
 module.exports = {
-  purge: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
-  content: [],
+  content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   theme: {
+    colors: {
+      transparent: 'transparent',
+      current: 'currentColor',
+      gray: colors.gray,
+      "emerald": "#06d98d",
+      "neon-blue": "#666fff",
+      "medium-champagne": "#ffe9a9",
+      "fiery-rose": "#fe5b63",
+    },
     extend: {},
   },
   plugins: [],
