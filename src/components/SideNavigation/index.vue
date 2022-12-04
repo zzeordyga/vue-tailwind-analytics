@@ -125,7 +125,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { ref } from 'vue'
 import { Dialog, DialogOverlay, TransitionChild, TransitionRoot } from '@headlessui/vue'
 import {
